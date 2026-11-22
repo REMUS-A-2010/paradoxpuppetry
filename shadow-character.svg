@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">After the Last Bell — character silhouette study</title>
+  <desc id="desc">Original crimson-lit silhouette concept for a character in the animated series.</desc>
+  <defs>
+    <radialGradient id="backdrop" cx=".52" cy=".4" r=".72">
+      <stop stop-color="#7d1825"/>
+      <stop offset=".48" stop-color="#2a1016"/>
+      <stop offset="1" stop-color="#09090b"/>
+    </radialGradient>
+    <linearGradient id="silhouette" x2="1" y2="1">
+      <stop stop-color="#171317"/>
+      <stop offset=".55" stop-color="#08080a"/>
+      <stop offset="1" stop-color="#1b0d12"/>
+    </linearGradient>
+    <linearGradient id="rim" x2="1">
+      <stop stop-color="#e84558"/>
+      <stop offset="1" stop-color="#671622"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#backdrop)"/>
+  <path d="M0 670h1200v230H0z" fill="#09090b" opacity=".7"/>
+  <path d="M135 0v900M1065 0v900" stroke="#e37c82" stroke-opacity=".2" stroke-width="2"/>
+  <path d="M180 110h840M180 164h840M180 218h840" stroke="#f4a5a5" stroke-opacity=".1"/>
+  <path d="M232 0v583M968 0v583" stroke="#db6975" stroke-opacity=".17" stroke-width="18"/>
+  <circle cx="600" cy="281" r="137" fill="url(#rim)" opacity=".3"/>
+  <path d="M503 222c10-88 173-108 205 6l-12 143H511z" fill="url(#silhouette)" stroke="#d94a5b" stroke-width="5"/>
+  <path d="M479 255c-14-86 30-168 125-174 100-6 148 80 129 174-36-35-73-67-116-69-44-2-88 31-138 69z" fill="#101014" stroke="#e25767" stroke-width="7"/>
+  <path d="M477 260c45-33 92-68 141-66 47 2 83 32 118 63" fill="none" stroke="#ff9aa0" stroke-opacity=".75" stroke-width="4"/>
+  <path d="M496 350l-73 185 55 206 122 73 125-73 53-208-78-183z" fill="url(#silhouette)" stroke="#852936" stroke-width="7"/>
+  <path d="M499 358l100 91 98-92" fill="none" stroke="#c63b4d" stroke-width="7"/>
+  <path d="M552 442l46 73 48-74-22 187h-49z" fill="#671520" opacity=".75"/>
+  <path d="M487 401l-158 172 76 41 130-124M717 402l155 173-77 41-128-124" fill="#111015" stroke="#712432" stroke-width="6"/>
+  <path d="M404 604l-81 101 129-33M794 604l80 102-128-34" fill="none" stroke="#b53a49" stroke-width="5"/>
+  <path d="M505 724l-25 122h242l-25-123" fill="#0b0b0d" stroke="#77212d" stroke-width="6"/>
+  <path d="M523 768h154M512 809h176" stroke="#c04050" stroke-opacity=".55" stroke-width="4"/>
+  <circle cx="551" cy="282" r="7" fill="#f1787f"/>
+  <circle cx="651" cy="282" r="7" fill="#f1787f"/>
+  <path d="M570 320q30 18 59 0" fill="none" stroke="#ad414e" stroke-width="4" opacity=".8"/>
+  <path d="M277 771h127M796 771h127" stroke="#e0717b" stroke-opacity=".25" stroke-width="2"/>
+  <text x="54" y="829" fill="#f4dce0" font-family="Arial,sans-serif" font-size="18" letter-spacing="7">CHARACTER STUDY</text>
+  <text x="55" y="862" fill="#d46b78" font-family="Arial,sans-serif" font-size="11" letter-spacing="5">EARLY SILHOUETTE · NOT FINAL</text>
+  <text x="1120" y="852" fill="#f2c6cb" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">PP</text>
+</svg>

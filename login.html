@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Admin sign in — Paradox Puppetry</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <header class="login-header-row">
+      <a class="admin-brand" href="../index.html"><span class="brand-mark">PP</span><span>PARADOX <b>PUPPETRY</b><small>STUDIO ADMIN · LOCAL DEMO</small></span></a>
+      <div class="login-head-note"><span></span>PRIVATE GATEWAY <b>01 / 01</b></div>
+    </header>
+    <div class="login-stage">
+      <section class="login-showcase" aria-label="Paradox Puppetry studio access">
+        <div class="showcase-serial"><span>PP — 001</span><span>THE CREATIVE ARCHIVE</span></div>
+        <div class="showcase-orbit" aria-hidden="true">
+          <span class="orbit-ring orbit-ring-outer"></span>
+          <span class="orbit-ring orbit-ring-inner"></span>
+          <span class="orbit-core">PP</span>
+          <span class="orbit-caption">ACCESS NODE · 01</span>
+        </div>
+        <div class="showcase-copy">
+          <div class="eyebrow">A PRIVATE STUDIO GATEWAY</div>
+          <h2>STEP INTO<br>THE <span>UNKNOWN.</span></h2>
+          <p>Stories start with a spark. Sign in to shape what comes next.</p>
+        </div>
+        <div class="showcase-metrics" aria-label="Studio values">
+          <div><strong>01</strong><span>ONE STUDIO</span></div>
+          <div><strong>∞</strong><span>WORLDS TO BUILD</span></div>
+          <div><strong>PP</strong><span>BEYOND THE FRAME</span></div>
+        </div>
+        <div class="showcase-footer"><span>PARADOX PUPPETRY</span><span>LOCAL DEMO · ACCESS NODE 01</span></div>
+      </section>
+      <section class="login-card">
+        <div class="login-card-top">
+          <div><div class="eyebrow">IDENTITY VERIFICATION</div><div class="login-protocol">LOCAL CHANNEL <span>·</span> 01</div></div>
+          <span class="login-lock" aria-hidden="true"><span>✦</span></span>
+        </div>
+        <h1>CHOOSE YOUR<br><span>ACCESS.</span></h1>
+        <p class="login-copy">Choose the studio role assigned to your separate username and password. Visitor sign-in is not used here.</p>
+        <div class="login-access-modes" role="group" aria-label="Choose a local demo account">
+          <button class="login-mode-button is-active" type="button" data-login-user="Admin" aria-pressed="true"><span>01</span><b>ADMIN ACCESS</b><small>CONTENT &amp; APPLICATIONS</small></button>
+          <button class="login-mode-button" type="button" data-login-user="Owner" aria-pressed="false"><span>02</span><b>OWNER PANEL</b><small>FULL STUDIO ACCESS</small></button>
+        </div>
+        <p class="login-role-note" id="loginRoleNote">Admin access is limited to everyday studio content and applications.</p>
+        <p class="login-provider-note"><span aria-hidden="true">✦</span> PRIVATE STUDIO CREDENTIALS · No Google sign-in is used here.</p>
+        <form id="loginForm">
+          <label for="username">USERNAME <span>01</span></label>
+          <input id="username" name="username" autocomplete="username" value="Admin" required maxlength="80">
+          <label for="password">PASSWORD <span>02</span></label>
+          <div class="password-field">
+            <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="200">
+            <button type="button" class="password-toggle" id="togglePassword" aria-label="Show password" aria-pressed="false">SHOW</button>
+          </div>
+          <p class="login-error" id="loginError" role="alert" hidden></p>
+          <button class="button button-primary login-submit" id="loginButton" type="submit"><span>ENTER ADMIN WORKSPACE</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="demo-hint" id="serverStatus" role="status"><span class="status-dot"></span><span>CHECKING LOCAL STUDIO SERVER…</span></div>
+        <p class="security-note">Local demo only. Browser data is not securely protected; this is not production authentication.</p>
+      </section>
+    </div>
+    <footer class="login-footer"><span>© <span id="year"></span> PARADOX PUPPETRY</span><a href="../index.html">RETURN TO THE WEBSITE ↗</a></footer>
+  </main>
+  <script src="login.js" defer></script>
+</body>
+</html>

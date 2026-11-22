@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Your account — Paradox Puppetry</title>
+  <link rel="stylesheet" href="admin/admin.css">
+  <style>
+    .customer-account-card h1{font-size:clamp(42px,5vw,62px)}
+    .customer-account-card .oauth-buttons{grid-template-columns:1fr}
+    .customer-account-card .oauth-button{min-height:48px;font-size:10px}
+    .customer-identity{margin:18px 0;padding:16px;border:1px solid #34282a;background:#100d0e}
+    .customer-identity-label{display:block;color:#9e8e91;font-size:8px;font-weight:700;letter-spacing:1.5px}
+    .customer-identity-email{display:block;margin-top:8px;overflow-wrap:anywhere;color:#f4eeee;font-size:14px}
+    .customer-account-note{margin-top:16px;padding:12px;border-left:2px solid #a72b3d;background:#160d0f;color:#a89c9e;font-size:9px;line-height:1.7}
+    .customer-account-note strong{color:#e8c2c7}
+    .customer-signout{width:100%;margin-top:4px}
+    .customer-account-card .login-error{margin-bottom:10px}
+    @media(max-width:460px){
+      .customer-account-card h1{font-size:clamp(38px,11vw,46px)}
+      .customer-account-card .oauth-buttons{gap:8px}
+      .customer-account-note{margin-top:13px;padding:11px;font-size:9px}
+    }
+  </style>
+</head>
+<body class="login-page customer-account-page">
+  <main class="login-layout">
+    <header class="login-header-row">
+      <a class="admin-brand" href="index.html"><span class="brand-mark">PP</span><span>PARADOX <b>PUPPETRY</b><small>PUBLIC STUDIO · CUSTOMER ACCOUNT</small></span></a>
+      <a class="login-head-note" href="index.html">BACK TO THE STUDIO <b>↗</b></a>
+    </header>
+    <div class="login-stage">
+      <section class="login-showcase" aria-label="Paradox Puppetry member access">
+        <div class="showcase-serial"><span>PP — 002</span><span>THE CREATIVE UNIVERSE</span></div>
+        <div class="showcase-orbit" aria-hidden="true">
+          <span class="orbit-ring orbit-ring-outer"></span>
+          <span class="orbit-ring orbit-ring-inner"></span>
+          <span class="orbit-core">PP</span>
+          <span class="orbit-caption">MEMBER NODE · 02</span>
+        </div>
+        <div class="showcase-copy">
+          <div class="eyebrow">YOUR STUDIO ACCOUNT</div>
+          <h2>KEEP YOUR<br><span>PLACE IN</span><br>THE STORY.</h2>
+          <p>Sign in as a visitor and stay connected to the Paradox universe.</p>
+        </div>
+        <div class="showcase-footer"><span>PARADOX PUPPETRY</span><span>VISITOR ACCESS · LOCAL DEMO</span></div>
+      </section>
+      <section class="login-card customer-account-card" aria-labelledby="accountTitle">
+        <div class="login-card-top">
+          <div><div class="eyebrow">PUBLIC VISITOR ACCESS</div><div class="login-protocol">CUSTOMER ACCOUNT <span>·</span> 02</div></div>
+          <span class="login-lock" aria-hidden="true"><span>✦</span></span>
+        </div>
+        <h1 id="accountTitle">YOUR WORLD,<br><span>YOUR WAY.</span></h1>
+        <p class="login-copy">Sign in with Google for a visitor session. It is separate from the private Admin and Owner panel.</p>
+        <p class="login-error" id="customerError" role="alert" hidden></p>
+        <div id="signedOutAccount">
+          <div class="oauth-buttons">
+            <button class="oauth-button" id="customerGoogleSignIn" type="button" disabled><span class="oauth-provider-mark google-mark" aria-hidden="true">G</span><span>Continue with Google</span></button>
+            <button class="oauth-button" id="customerAppleSignIn" type="button" disabled aria-describedby="providerStatus"><span class="oauth-provider-mark apple-mark" aria-hidden="true">A</span><span>Continue with Apple</span></button>
+          </div>
+          <p class="oauth-status" id="providerStatus" role="status">Checking sign-in providers…</p>
+        </div>
+        <div id="signedInAccount" hidden>
+          <p class="eyebrow">SIGNED IN WITH GOOGLE</p>
+          <div class="customer-identity"><span class="customer-identity-label">YOUR VERIFIED EMAIL</span><strong class="customer-identity-email" id="customerEmail"></strong></div>
+          <button class="button button-secondary customer-signout" id="customerSignOut" type="button">SIGN OUT</button>
+        </div>
+        <p class="customer-account-note"><strong>Local demo:</strong> your Google sign-in is a temporary session. Cart and wishlist stay in this browser; customer profiles are not saved long-term. Cross-device syncing needs a connected backend.</p>
+        <div class="demo-hint" id="customerServerStatus" role="status"><span class="status-dot"></span><span>CHECKING LOCAL STUDIO SERVER…</span></div>
+        <p class="security-note">Visitor sign-in does not grant Admin or Owner access. Do not use this local demo to store sensitive personal information.</p>
+      </section>
+    </div>
+    <footer class="login-footer"><span>© <span id="year"></span> PARADOX PUPPETRY</span><a href="index.html">RETURN TO THE WEBSITE ↗</a></footer>
+  </main>
+  <script src="account.js" defer></script>
+  <script src="visit-tracking.js" defer></script>
+</body>
+</html>

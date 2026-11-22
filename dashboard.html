@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Studio dashboard — Paradox Puppetry</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="dashboard-page" data-access="pending">
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="admin-brand sidebar-brand" href="../index.html"><span class="brand-mark">PP</span><span>PARADOX <b>PUPPETRY</b><small id="dashboardRoleLabel">STUDIO ADMIN</small></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="sidebar-nav" id="sidebarNav" aria-label="Dashboard navigation">
+        <button class="nav-item active" data-section="overview"><span>◫</span>Overview</button>
+        <button class="nav-item" data-section="products"><span>◇</span>Products</button>
+        <button class="nav-item" data-section="categories"><span>▦</span>Categories</button>
+        <button class="nav-item" data-section="productions"><span>▶</span>Productions</button>
+        <button class="nav-item" data-section="episodes"><span>▤</span>Episodes</button>
+        <button class="nav-item" data-section="characters"><span>♙</span>Characters</button>
+        <button class="nav-item" data-section="announcements"><span>✦</span>Announcements</button>
+        <button class="nav-item" data-section="leaks"><span>◉</span>Studio leaks</button>
+        <button class="nav-item" data-section="team"><span>♧</span>Team</button>
+        <button class="nav-item" data-section="applications"><span>↗</span>Applications</button>
+        <button class="nav-item" data-section="contacts"><span>✉</span>Contact inbox</button>
+        <button class="nav-item" data-section="orders"><span>▣</span>Demo orders</button>
+        <button class="nav-item" data-section="content"><span>✎</span>Website content</button>
+        <button class="nav-item" data-section="media"><span>▧</span>Media library</button>
+        <button class="nav-item" data-section="settings"><span>⚙</span>Settings</button>
+        <button class="nav-item" data-section="admin-access" hidden><span>♙</span>Admin access</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="local-status"><span class="status-dot"></span><span>LOCAL DEMO<small>Browser-only content</small></span></div>
+        <a class="sidebar-back" href="../index.html">← Visit public website</a>
+        <button class="logout-button" id="logoutButton">⇥ <span>Sign out</span></button>
+      </div>
+    </aside>
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open dashboard menu" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div><span class="topbar-kicker" id="dashboardKicker">PARADOX PUPPETRY / STUDIO</span><h1 id="pageTitle">Overview</h1></div>
+        <div class="topbar-right"><span class="role-badge" id="roleBadge" hidden></span><span class="local-badge"><i></i> LOCAL DEMO</span><button class="avatar-button" id="accountAvatar" aria-label="Admin account">A</button></div>
+      </header>
+      <div class="demo-warning"><strong>DEMO ENVIRONMENT</strong><span>Role limits are for this demo UI only. Changes stay in this browser and are not securely protected, backed up, or sent to a server.</span></div>
+      <div class="dashboard-content">
+        <section class="view-panel active" id="view-overview">
+          <div class="welcome-row"><div><div class="eyebrow">The studio at a glance</div><h2>Good to see you, <span id="welcomeRole">Admin.</span></h2><p id="welcomeCopy">Here is what is happening in your local demo workspace.</p></div><button class="button button-secondary" id="editWebsiteContentButton" data-goto="content">EDIT WEBSITE CONTENT ↗</button></div>
+          <div class="stats-grid" id="statsGrid"></div>
+          <div class="overview-grid">
+            <section class="panel-card"><div class="panel-heading"><div><span class="eyebrow">Your workspace</span><h3>QUICK ACCESS</h3></div></div><div class="quick-actions">
+              <button data-goto="products"><span>＋</span><b>Add a product</b><small>Update the shop demo</small></button>
+              <button data-goto="announcements"><span>＋</span><b>Post an update</b><small>Share studio news</small></button>
+              <button data-goto="leaks"><span>＋</span><b>Post a studio leak</b><small>Share a sneak peek</small></button>
+              <button data-goto="productions"><span>＋</span><b>New production</b><small>Manage stories and status</small></button>
+              <button data-goto="applications"><span>↗</span><b>Review applications</b><small>See creative submissions</small></button>
+            </div></section>
+            <section class="panel-card"><div class="panel-heading"><div><span class="eyebrow">Latest activity</span><h3>RECENT SUBMISSIONS</h3></div><button class="text-button" data-goto="applications">VIEW ALL ↗</button></div><div id="recentSubmissions" class="recent-list"></div></section>
+          </div>
+          <p class="demo-data-note">Product orders and sample records are fictional demo data. Do not use this dashboard to process real orders, payments, or personal information.</p>
+        </section>
+        <section class="view-panel" id="view-admin-access">
+          <div class="access-heading">
+            <div><span class="eyebrow">OWNER CONTROL</span><h2>Admin access</h2><p>Only accounts approved here can sign in to the limited admin dashboard. Revoke an account to immediately end its active sessions.</p></div>
+            <span class="access-owner-badge">OWNER ONLY</span>
+          </div>
+          <div class="access-grid">
+            <form class="panel-card access-form" id="adminAccessForm">
+              <div class="panel-heading"><div><span class="eyebrow">GRANT ACCESS</span><h3>Approve an admin</h3></div></div>
+              <label for="adminAccessUsername">Admin username</label>
+              <input id="adminAccessUsername" name="username" autocomplete="off" maxlength="80" required>
+              <label for="adminAccessPassword">Temporary password</label>
+              <input id="adminAccessPassword" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="200" required>
+              <small>Admins sign in with their approved username and password. Use at least 8 characters and share credentials directly.</small>
+              <p class="form-error" id="adminAccessError" role="alert" hidden></p>
+              <button class="button button-primary" id="grantAdminButton" type="submit">GRANT ADMIN ACCESS ↗</button>
+            </form>
+            <section class="panel-card approved-admins">
+              <div class="panel-heading"><div><span class="eyebrow">OWNER-MANAGED ACCOUNTS</span><h3>Approved admins</h3></div><button class="text-button" id="refreshAdminAccounts" type="button">REFRESH ↻</button></div>
+              <div id="adminAccountsList" class="admin-account-list" aria-live="polite">Loading approved accounts…</div>
+            </section>
+          </div>
+          <p class="access-demo-note">Local demo only: approval controls who can use this local server. Website records remain in this browser and are not securely protected. This is not production authentication.</p>
+        </section>
+        <section class="view-panel" id="view-management">
+          <section class="feature-control" id="featureControls" hidden aria-labelledby="featureControlTitle">
+            <div><span class="eyebrow">PUBLIC WEBSITE VISIBILITY</span><h3 id="featureControlTitle">OPTIONAL SECTIONS</h3><p id="featureControlDescription">Choose which optional sections appear on the public site. Hidden sections keep their saved content in this local demo.</p></div>
+            <div class="feature-switches">
+              <label class="feature-switch"><input id="leaksVisibilityToggle" type="checkbox"><span class="switch-track" aria-hidden="true"></span><span class="feature-switch-copy"><strong>Studio Leaks</strong><small id="leaksVisibilityLabel">Hidden from public site</small></span></label>
+              <label class="feature-switch" id="recruitmentVisibilityControl"><input id="recruitmentVisibilityToggle" type="checkbox"><span class="switch-track" aria-hidden="true"></span><span class="feature-switch-copy"><strong>Creative open call</strong><small id="recruitmentVisibilityLabel">Hidden from public site</small></span></label>
+            </div>
+          </section>
+          <div class="list-toolbar"><div><div class="eyebrow" id="listEyebrow">STUDIO CONTENT</div><h2 id="listTitle">Manage items</h2><p id="listDescription">Create, edit and remove local demo records.</p></div><button class="button button-primary" id="addRecordButton"><span>＋</span> ADD NEW</button></div>
+          <div class="table-tools"><label class="table-search"><span>⌕</span><input id="tableSearch" placeholder="Search this list…" type="search"></label><select id="tableFilter" aria-label="Filter records"><option value="">All statuses</option></select><span id="recordCount" class="record-count"></span></div>
+          <div class="table-card"><div class="table-scroll"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div><div class="table-empty" id="tableEmpty" hidden><span>✦</span><h3>No records yet</h3><p>Create the first item in this section.</p></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="sidebar-scrim" id="sidebarScrim"></div>
+  <div class="toast" id="dashboardToast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="recordModal" hidden>
+    <section class="record-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-title-row"><div><span class="eyebrow">LOCAL DEMO RECORD</span><h2 id="modalTitle">Add item</h2></div><button type="button" class="icon-close" id="closeModal" aria-label="Close dialog">×</button></div>
+      <form id="recordForm"><div class="record-form-grid" id="recordFields"></div><p class="form-error" id="formError" role="alert" hidden></p><div class="modal-actions"><button type="button" class="button button-secondary" id="cancelModal">CANCEL</button><button type="submit" class="button button-primary" id="saveRecordButton">SAVE CHANGES ↗</button></div></form>
+    </section>
+  </div>
+  <script src="dashboard.js" defer></script>
+</body>
+</html>
